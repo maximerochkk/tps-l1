@@ -23,7 +23,8 @@ void insertion_sort (int *tab, int size)
         int j = i - 1; 
         while (tab[j] > tab[i] && j >= 0) {
             swap(&tab[j], &tab[i]);
-            i--, j--;
+            i--; 
+            j--;
         }
     }
 }
@@ -33,7 +34,6 @@ int main (void)
     int tab[] = {1, 9, 8, 7, 6, 1};
     int size = sizeof(tab) / sizeof(int);
 
-    print_tab(tab, size);
     insertion_sort(tab, size);
     print_tab(tab, size);
 
