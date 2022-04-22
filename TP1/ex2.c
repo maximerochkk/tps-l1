@@ -53,9 +53,9 @@ int main (void)
     fill_list(list, n);
 
     crible_erath(list, n);
-
     print_list(list, n);
+    
     free(n);
-
+    
     return 0;
 }
