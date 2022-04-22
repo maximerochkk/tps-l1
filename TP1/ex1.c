@@ -33,7 +33,6 @@ int main (void)
     int tab[] = {1, 9, 8, 7, 6, 1};
     int size = sizeof(tab) / sizeof(int);
 
-    print_tab(tab, size);
     insertion_sort(tab, size);
     print_tab(tab, size);
 
