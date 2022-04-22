@@ -17,20 +17,21 @@ void print_list (int *list, int *n)
 
 void crible_erath (int *list, int *n)
 {
+    int pivot, x;
     for (int i = 1; i <= *n; i++) {
         if (list[i] == 1) {
-            *n = *n - 1;
+            --*n;
             for (int j = i; j <= *n; j++) {
                 list[j] = list[j + 1];
             }
             i--;
         } else {
-            int pivot = list[i];
+            pivot = list[i];
             for (int j = i + 1; j <= *n; j++) {
-                int x = 1;
+                x = 1;
                 while (list[i] * x <= list[j]) {
                     if (list[i] * x == list[j]) {
-                        *n = *n - 1;
+                        --*n;
                         for (int z = j; z <= *n; z++) {
                             list[z] = list[z + 1];
                         }
@@ -46,16 +47,16 @@ void crible_erath (int *list, int *n)
 
 int main (void)
 {
-    int *n = calloc(1, sizeof(int));
-    *n = 1000;
+    int *size = malloc(sizeof(int));
+    int list[1000 + 1];
+    *size = sizeof(list) / sizeof(int) - 1;
 
-    int list[*n];
-    fill_list(list, n);
+    fill_list(list, size);
+    crible_erath(list, size);
+    print_list(list, size);
 
-    crible_erath(list, n);
-
-    print_list(list, n);
-    free(n);
+    free(size);
+    size = NULL;
 
     return 0;
 }
