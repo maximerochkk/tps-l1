@@ -55,8 +55,16 @@ int main (void)
     crible_erath(list, size);
     print_list(list, size);
 
+<<<<<<< HEAD
     free(size);
     size = NULL;
 
+=======
+    crible_erath(list, n);
+    print_list(list, n);
+    
+    free(n);
+    
+>>>>>>> ab0af5f771c6c8f17cc29e07aa2599086d164406
     return 0;
 }
