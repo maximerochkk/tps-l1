@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fill_list (int *list, int *n) 
+void fill_list (int *list, int n) 
 {
-    for (int i = 1; i <= *n; i++) {
+    for (int i = 1; i <= n; i++) {
         list[i] = i;
     }
 }
 
-void print_list (int *list, int *n)
+void print_list (int *list, int n)
 {
-    for (int i = 1; i <= *n; i++) {
+    for (int i = 1; i <= n; i++) {
         printf("%d\n", list[i]);
     }
 }
@@ -47,16 +47,12 @@ void crible_erath (int *list, int *n)
 
 int main (void)
 {
-    int *size = malloc(sizeof(int));
     int list[1000 + 1];
-    *size = sizeof(list) / sizeof(int) - 1;
+    int size = (sizeof(list) / sizeof(int)) - 1;
 
     fill_list(list, size);
-    crible_erath(list, size);
+    crible_erath(list, &size);
     print_list(list, size);
-
-    free(size);
-    size = NULL;
 
     return 0;
 }
